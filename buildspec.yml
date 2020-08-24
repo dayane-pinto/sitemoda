@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entering install phase...
+      - echo Nothing to do in the install phase...
+  pre_build:
+    commands:
+      - echo Entering pre_build phase...
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Entering build phase...
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - aws cloudfront create-invalidation  --distribution-id E3OXIFAY70CKQW  --paths "/"
+artifacts:
+  type: zip
+  files:
+    - '**/*'
+  base-directory: 'webpage'
