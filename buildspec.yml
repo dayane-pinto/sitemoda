@@ -15,7 +15,7 @@ phases:
       - echo Build started on `date`
   post_build:
     commands:
-      - aws cloudfront create-invalidation  --distribution-id E3OXIFAY70CKQW  --paths "/"
+      - echo Entering post build phase...
 artifacts:
   type: zip
   files:
